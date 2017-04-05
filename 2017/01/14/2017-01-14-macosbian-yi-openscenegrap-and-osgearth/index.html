@@ -95,7 +95,7 @@
 <meta property="og:description" content="简介这个是一篇MacOS上编译OpenSceneGraph和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下OpenSceneGraph、OsgEarth。">
 <meta property="og:image" content="http://yoursite.com/images/Osg_1.png">
 <meta property="og:image" content="http://yoursite.com/images/Osg_2.png">
-<meta property="og:updated_time" content="2017-03-31T03:00:51.000Z">
+<meta property="og:updated_time" content="2017-04-05T03:19:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS编译OpenSceneGrap&amp;OsgEarth">
 <meta name="twitter:description" content="简介这个是一篇MacOS上编译OpenSceneGraph和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下OpenSceneGraph、OsgEarth。">
@@ -392,7 +392,29 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install gdal</div></pre></td></tr></table></figure>
 <p>安装完成之后，我们再次Configure，直到没有Error。</p>
 <p><strong>注意</strong></p>
-<p>Configure需要多次操作，直到我们把需要的库都找对。<br>|||<br>|-:-|-:-|<br>|CMAKE_BUILD_TYPE|Release|<br>|BUILD_OSG_EXAMPLES|勾上|<br>|BUILD_DOCUMENTATION|勾上|</p>
+<p>Configure需要多次操作，直到我们把需要的库都找对。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMAKE_BUILD_TYPE</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>BUILD_OSG_EXAMPLES</td>
+<td>勾上</td>
+</tr>
+<tr>
+<td>BUILD_DOCUMENTATION</td>
+<td>勾上</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p>步骤三：<br>编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /Users/whisperchi/recent/OSG/OpenSceneGraph-3.4.0/ReleaseBuild</div><div class="line">$ make -j 8</div></pre></td></tr></table></figure></p>
 <p>如果编译过程中不出错，安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo make install</div></pre></td></tr></table></figure></p>
