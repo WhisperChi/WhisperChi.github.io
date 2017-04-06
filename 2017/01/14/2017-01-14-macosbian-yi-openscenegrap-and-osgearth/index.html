@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="简介这个是一篇MacOS上编译OpenSceneGraph和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下OpenSceneGraph、OsgEarth。">
+<meta name="description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacOS编译OpenSceneGrap&amp;OsgEarth">
+<meta property="og:title" content="MacOS编译Osg&amp;OsgEarth">
 <meta property="og:url" content="http://yoursite.com/2017/01/14/2017-01-14-macosbian-yi-openscenegrap-and-osgearth/index.html">
 <meta property="og:site_name" content="WhisperChi">
-<meta property="og:description" content="简介这个是一篇MacOS上编译OpenSceneGraph和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下OpenSceneGraph、OsgEarth。">
+<meta property="og:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
 <meta property="og:image" content="http://yoursite.com/images/Osg_1.png">
 <meta property="og:image" content="http://yoursite.com/images/Osg_2.png">
-<meta property="og:updated_time" content="2017-04-05T03:19:35.000Z">
+<meta property="og:updated_time" content="2017-04-06T06:30:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacOS编译OpenSceneGrap&amp;OsgEarth">
-<meta name="twitter:description" content="简介这个是一篇MacOS上编译OpenSceneGraph和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下OpenSceneGraph、OsgEarth。">
+<meta name="twitter:title" content="MacOS编译Osg&amp;OsgEarth">
+<meta name="twitter:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
 <meta name="twitter:image" content="http://yoursite.com/images/Osg_1.png">
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title> MacOS编译OpenSceneGrap&amp;OsgEarth | WhisperChi </title>
+  <title> MacOS编译Osg&amp;OsgEarth | WhisperChi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +273,7 @@
             
             
               
-                MacOS编译OpenSceneGrap&amp;OsgEarth
+                MacOS编译Osg&amp;OsgEarth
               
             
           </h1>
@@ -324,12 +324,12 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这个是一篇MacOS上编译OpenSceneGraph和OsgEarth的实践文章。<br>我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph和OsgEarth库。<br>后来换了笔记本，所以在Mac上的编译了下OpenSceneGraph、OsgEarth。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这个是一篇MacOS上编译Osg和OsgEarth的实践文章。<br>我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。<br>后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。</p>
 <a id="more"></a>
 <p>文章分为一下几部分</p>
 <ul>
 <li>环境介绍</li>
-<li>OpenSceneGraph和OsgEarth的编译过程</li>
+<li>Osg和OsgEarth的编译过程</li>
 <li>过程中遇到的一些问题和解决方法</li>
 </ul>
 <h2 id="电脑环境和代码版本"><a href="#电脑环境和代码版本" class="headerlink" title="电脑环境和代码版本"></a>电脑环境和代码版本</h2><ul>
@@ -373,7 +373,7 @@
 </thead>
 <tbody>
 <tr>
-<td>OpenSceneGraph</td>
+<td>Osg</td>
 <td>3.4.0</td>
 </tr>
 <tr>
@@ -382,7 +382,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h3 id="OpenSceneGraph编译"><a href="#OpenSceneGraph编译" class="headerlink" title="OpenSceneGraph编译"></a>OpenSceneGraph编译</h3><p>步骤一：</p>
+<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h3 id="Osg编译"><a href="#Osg编译" class="headerlink" title="Osg编译"></a>Osg编译</h3><p>步骤一：</p>
 <p>CMake源码，生成生成本平台能够编译的项目<br>说明：CMake的作用是将源码生成当前操作系统的编译器能够编译的文件，如：VS平台的VS2010工程、Linux平台的Makefile文件、Mac上的Xcode项目等。<br><img src="/images/Osg_1.png" alt="配置路径"><br>选择源码与项目生成目录，在3处选择生成的项目类型（我比较熟悉Makefile，一下以Makefile为例），当然如果你熟悉CodeBlocks、Xcode、Eclipse等，也可以生成相应的项目文件。</p>
 <hr>
 <p>步骤二：</p>
@@ -421,11 +421,11 @@
 <p><strong>如果编译出错</strong><br>首先我们要对编译过程有个了解，大致会遇到一下几类错误：<br>找不到头文件:    缺少对应库的开发包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install xxxx-dev</div></pre></td></tr></table></figure></p>
 <p>找不到实现:    没有该库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install xxx</div></pre></td></tr></table></figure></p>
 <p>语法错误:    这个可能是因为电脑上的库太久或者太新、接口在这些库升级之后已经变了。</p>
-<h3 id="OsgEarth编译"><a href="#OsgEarth编译" class="headerlink" title="OsgEarth编译"></a>OsgEarth编译</h3><p>与OpenSceneGraph编译类似，注意：编译OsgEarth前，需要我们已经编译安装完OpenSceneGraph<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ osgversion</div></pre></td></tr></table></figure></p>
-<p>如果能够看到osg的版本，说明OpenSceneGraph编译成功<br><strong>注意</strong><br>Configure的时候，要注意Osg的相关库有没有找到</p>
+<h3 id="OsgEarth编译"><a href="#OsgEarth编译" class="headerlink" title="OsgEarth编译"></a>OsgEarth编译</h3><p>与Osg编译类似，注意：编译OsgEarth前，需要我们已经编译安装完Osg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ osgversion</div></pre></td></tr></table></figure></p>
+<p>如果能够看到osg的版本，说明Osg编译成功<br><strong>注意</strong><br>Configure的时候，要注意Osg的相关库有没有找到</p>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li>Gdal<br>这个是Gdal源码的一个错误，将某个类的析构函数声明为Protected类型。<br>我这边直接修改的Gdal的头文件，将Protected改为了Public类型<br>详见Github上的讨论。<br><a href="https://github.com/openstreetmap/osm2pgsql/issues/634" target="_blank" rel="external">github解决方案</a></li>
-<li>Cocoa例子编译失败<br>这个是OpenSceneGraph源码里面Cocoa的例子代码不对。<br>替换为最新版本的源码里面的例子即可 src/example/osgviewerCocoa 替换这个文件夹，即可。</li>
+<li>Cocoa例子编译失败<br>这个是Osg源码里面Cocoa的例子代码不对。<br>替换为最新版本的源码里面的例子即可 src/example/osgviewerCocoa 替换这个文件夹，即可。</li>
 </ol>
 
       
@@ -591,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电脑环境和代码版本"><span class="nav-number">2.</span> <span class="nav-text">电脑环境和代码版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译步骤"><span class="nav-number">3.</span> <span class="nav-text">编译步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenSceneGraph编译"><span class="nav-number">3.1.</span> <span class="nav-text">OpenSceneGraph编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OsgEarth编译"><span class="nav-number">3.2.</span> <span class="nav-text">OsgEarth编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电脑环境和代码版本"><span class="nav-number">2.</span> <span class="nav-text">电脑环境和代码版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译步骤"><span class="nav-number">3.</span> <span class="nav-text">编译步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Osg编译"><span class="nav-number">3.1.</span> <span class="nav-text">Osg编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OsgEarth编译"><span class="nav-number">3.2.</span> <span class="nav-text">OsgEarth编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>
