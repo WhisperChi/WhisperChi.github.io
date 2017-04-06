@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="简介  本文主要是利用postfix、dovecot这两个开源软件，在VPS上搭建了一个邮件服务器。">
+<meta name="description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VPS搭建私人邮箱">
-<meta property="og:url" content="http://yoursite.com/2017/01/04/2017-01-04-vpsda-jian-si-ren-you-xiang/index.html">
+<meta property="og:title" content="MacOS编译Osg&amp;OsgEarth">
+<meta property="og:url" content="http://yoursite.com/2017/01/14/2017-01-14-macosbian-yi-Osg-and-osgearth/index.html">
 <meta property="og:site_name" content="WhisperChi">
-<meta property="og:description" content="简介  本文主要是利用postfix、dovecot这两个开源软件，在VPS上搭建了一个邮件服务器。">
-<meta property="og:updated_time" content="2017-03-31T01:00:06.000Z">
+<meta property="og:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
+<meta property="og:image" content="http://yoursite.com/images/Osg_1.png">
+<meta property="og:image" content="http://yoursite.com/images/Osg_2.png">
+<meta property="og:updated_time" content="2017-04-06T06:30:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VPS搭建私人邮箱">
-<meta name="twitter:description" content="简介  本文主要是利用postfix、dovecot这两个开源软件，在VPS上搭建了一个邮件服务器。">
+<meta name="twitter:title" content="MacOS编译Osg&amp;OsgEarth">
+<meta name="twitter:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
+<meta name="twitter:image" content="http://yoursite.com/images/Osg_1.png">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/04/2017-01-04-vpsda-jian-si-ren-you-xiang/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/14/2017-01-14-macosbian-yi-Osg-and-osgearth/"/>
 
 
 
 
 
-  <title> VPS搭建私人邮箱 | WhisperChi </title>
+  <title> MacOS编译Osg&amp;OsgEarth | WhisperChi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/04/2017-01-04-vpsda-jian-si-ren-you-xiang/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/14/2017-01-14-macosbian-yi-Osg-and-osgearth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WhisperChi">
@@ -270,7 +273,7 @@
             
             
               
-                VPS搭建私人邮箱
+                MacOS编译Osg&amp;OsgEarth
               
             
           </h1>
@@ -285,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-04T17:18:06+08:00">
-                2017-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-14T01:44:32+08:00">
+                2017-01-14
               </time>
             
 
@@ -295,28 +298,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/interest/" itemprop="url" rel="index">
-                    <span itemprop="name">interest</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -343,104 +324,108 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>  本文主要是利用postfix、dovecot这两个开源软件，在VPS上搭建了一个邮件服务器。<br><a id="more"></a><br>本文主要参考了<a href="https://my.oschina.net/baratsemet/blog/413923" target="_blank" rel="external">Postfix+Dovecot+MySQL搭建邮件服务器</a>，但是按照这个配置遇到了一点小问题，通过搜索Postfix和Dovecot的官方文档，解决了。现在总结如下：</p>
-<hr>
-<h3 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h3><ul>
-<li>操作系统: ubuntu 14.04</li>
-<li><p>软件:<br>  这些开源软件有很多功能，本文仅介绍他们在本文中使用的功能。<br>  Postfix:负责邮件与外界的交互，邮件收发<br>  Dovecot:将接收的邮件存在服务器上；将接收到的邮件推送到用户邮件客户端<br>  MySql:<br>  与Postfix交互，用于验证收发邮件的时候，用户的合法性；<br>  与Dovecot交互，用于验证用户电脑、手机邮件客户端的用户合法性，推送接收到的邮件。    </p>
-</li>
-<li><p>客户端: Mac端自带邮件，手机端Gmail邮箱,BlackBerryHub,ubuntu上的Thunderbird(这个试了很多次，没有成功)。</p>
-</li>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这个是一篇MacOS上编译Osg和OsgEarth的实践文章。<br>我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。<br>后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。</p>
+<a id="more"></a>
+<p>文章分为一下几部分</p>
+<ul>
+<li>环境介绍</li>
+<li>Osg和OsgEarth的编译过程</li>
+<li>过程中遇到的一些问题和解决方法</li>
 </ul>
-<hr>
-<h3 id="事先准备"><a href="#事先准备" class="headerlink" title="事先准备"></a>事先准备</h3><p>  首先，你得有一个域名，如：xxx.com,xx.cn等；<br>  其次，你得有一个VPS、或者拥有外网IP的服务器一台(最好是Ubuntu14.04操作系统)<br>  最后，是一点点使用Linux的知识以及一些耐心。</p>
-<hr>
-<h3 id="MySql配置"><a href="#MySql配置" class="headerlink" title="MySql配置"></a>MySql配置</h3><ul>
-<li><p>创建用户</p>
-</li>
-<li><p>主要维护了三份表。</p>
-</li>
+<h2 id="电脑环境和代码版本"><a href="#电脑环境和代码版本" class="headerlink" title="电脑环境和代码版本"></a>电脑环境和代码版本</h2><ul>
+<li>环境</li>
 </ul>
-<p>virtual_domains表</p>
-<p>该表有两行。<br>第一行是 域名；第二行是 主机名。</p>
-<p>virtual_domains</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">id</th>
-<th style="text-align:center">name</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">mydomain</td>
+<td>操作系统</td>
+<td>MacOS 10.12.4</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">mail@mydomain</td>
+<td>Xcode</td>
+<td>8.3</td>
+</tr>
+<tr>
+<td>Homebrew</td>
+<td>1.1.11</td>
+</tr>
+<tr>
+<td>CMake</td>
+<td>3.7.1</td>
 </tr>
 </tbody>
 </table>
-<p>virtual_users表</p>
+<ul>
+<li>代码版本</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">id</th>
-<th style="text-align:center">domain_id</th>
-<th style="text-align:center">password</th>
-<th style="text-align:center">email</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">XXXX</td>
-<td style="text-align:center">user1@mydomain</td>
+<td>Osg</td>
+<td>3.4.0</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">XXXX</td>
-<td style="text-align:center">user2@mydomain</td>
+<td>OsgEarth</td>
+<td>2.9.0 DEVELOPMENT</td>
 </tr>
 </tbody>
 </table>
-<p>virtual_aliase</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">id</th>
-<th style="text-align:center">domain_id</th>
-<th style="text-align:center">source</th>
-<th style="text-align:center">destination</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">user1@mydomain</td>
-<td style="text-align:center">aliase1@xxx.xxx</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">user1@mydomain</td>
-<td style="text-align:center">aliase1@xxx.xxx</td>
-</tr>
-</tbody>
-</table>
-<p>注： 这边第一列id，要和 virtual_users表中一致。</p>
+<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h3 id="Osg编译"><a href="#Osg编译" class="headerlink" title="Osg编译"></a>Osg编译</h3><p>步骤一：</p>
+<p>CMake源码，生成生成本平台能够编译的项目<br>说明：CMake的作用是将源码生成当前操作系统的编译器能够编译的文件，如：VS平台的VS2010工程、Linux平台的Makefile文件、Mac上的Xcode项目等。<br><img src="/images/Osg_1.png" alt="配置路径"><br>选择源码与项目生成目录，在3处选择生成的项目类型（我比较熟悉Makefile，一下以Makefile为例），当然如果你熟悉CodeBlocks、Xcode、Eclipse等，也可以生成相应的项目文件。</p>
 <hr>
-<h3 id="Postfix安装和配置"><a href="#Postfix安装和配置" class="headerlink" title="Postfix安装和配置"></a>Postfix安装和配置</h3><hr>
-<h3 id="Dovecot安装和配置"><a href="#Dovecot安装和配置" class="headerlink" title="Dovecot安装和配置"></a>Dovecot安装和配置</h3><hr>
-<h3 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h3><ol>
-<li><p>Mac端自带软件</p>
-</li>
-<li><p>Gmail Android客户端</p>
-</li>
+<p>步骤二：</p>
+<p><img src="/images/Osg_2.png" alt="生成"><br>选择好项目之后，点击Done，会出现图中红色部分。<br>点击Configure,CMake会根据CMakefileList.txt来查找对应源码的路径、第三方库的路径，如果没有错误，点击Generate生成对应的Makefile文件。</p>
+<p><strong>如果出错</strong></p>
+<p>这时候会有一个Error的弹窗，我们注意看下方的提示，往上找。看哪个必须的库没有找到。<br>一般来说这个是因为你系统里面没有这个库（可能是电脑没有库、也可能是库没有加到环境变量下）<br>如果是第一种，我们使用Homebrew这个软件安装就可以。<br>如：我们缺少gdal库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install gdal</div></pre></td></tr></table></figure>
+<p>安装完成之后，我们再次Configure，直到没有Error。</p>
+<p><strong>注意</strong></p>
+<p>Configure需要多次操作，直到我们把需要的库都找对。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMAKE_BUILD_TYPE</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>BUILD_OSG_EXAMPLES</td>
+<td>勾上</td>
+</tr>
+<tr>
+<td>BUILD_DOCUMENTATION</td>
+<td>勾上</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>步骤三：<br>编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /Users/whisperchi/recent/OSG/OpenSceneGraph-3.4.0/ReleaseBuild</div><div class="line">$ make -j 8</div></pre></td></tr></table></figure></p>
+<p>如果编译过程中不出错，安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo make install</div></pre></td></tr></table></figure></p>
+<p><strong>如果编译出错</strong><br>首先我们要对编译过程有个了解，大致会遇到一下几类错误：<br>找不到头文件:    缺少对应库的开发包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install xxxx-dev</div></pre></td></tr></table></figure></p>
+<p>找不到实现:    没有该库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install xxx</div></pre></td></tr></table></figure></p>
+<p>语法错误:    这个可能是因为电脑上的库太久或者太新、接口在这些库升级之后已经变了。</p>
+<h3 id="OsgEarth编译"><a href="#OsgEarth编译" class="headerlink" title="OsgEarth编译"></a>OsgEarth编译</h3><p>与Osg编译类似，注意：编译OsgEarth前，需要我们已经编译安装完Osg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ osgversion</div></pre></td></tr></table></figure></p>
+<p>如果能够看到osg的版本，说明Osg编译成功<br><strong>注意</strong><br>Configure的时候，要注意Osg的相关库有没有找到</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
+<li>Gdal<br>这个是Gdal源码的一个错误，将某个类的析构函数声明为Protected类型。<br>我这边直接修改的Gdal的头文件，将Protected改为了Public类型<br>详见Github上的讨论。<br><a href="https://github.com/openstreetmap/osm2pgsql/issues/634" target="_blank" rel="external">github解决方案</a></li>
+<li>Cocoa例子编译失败<br>这个是Osg源码里面Cocoa的例子代码不对。<br>替换为最新版本的源码里面的例子即可 src/example/osgviewerCocoa 替换这个文件夹，即可。</li>
 </ol>
 
       
@@ -478,15 +463,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/04/2017-01-04-vpsda-jian-si-ren-you-xiang/" rel="next" title="VPS搭建私人邮箱">
+                <i class="fa fa-chevron-left"></i> VPS搭建私人邮箱
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/14/2017-01-14-macosbian-yi-Osg-and-osgearth/" rel="prev" title="MacOS编译Osg&amp;OsgEarth">
-                MacOS编译Osg&amp;OsgEarth <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -606,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境介绍"><span class="nav-number">1.1.</span> <span class="nav-text">环境介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事先准备"><span class="nav-number">1.2.</span> <span class="nav-text">事先准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySql配置"><span class="nav-number">1.3.</span> <span class="nav-text">MySql配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Postfix安装和配置"><span class="nav-number">1.4.</span> <span class="nav-text">Postfix安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dovecot安装和配置"><span class="nav-number">1.5.</span> <span class="nav-text">Dovecot安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端使用"><span class="nav-number">1.6.</span> <span class="nav-text">客户端使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电脑环境和代码版本"><span class="nav-number">2.</span> <span class="nav-text">电脑环境和代码版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译步骤"><span class="nav-number">3.</span> <span class="nav-text">编译步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Osg编译"><span class="nav-number">3.1.</span> <span class="nav-text">Osg编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OsgEarth编译"><span class="nav-number">3.2.</span> <span class="nav-text">OsgEarth编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>
