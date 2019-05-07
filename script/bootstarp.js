@@ -1,8 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function(){
   document.body.addEventListener('touchstart', function () {});
-  var app = new Nlvi(nlviconfig);
-  app.bootstarp();
-});
-$(document).ready(function() {
-  $('.container').show();
+  var app = new nlvi(nlviconfig);
+  app.bootstrap();
 });
