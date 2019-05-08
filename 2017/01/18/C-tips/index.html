@@ -367,8 +367,8 @@
       
 
       
-        <h1 id="记录一些C-开发日常的注意点"><a href="#记录一些C-开发日常的注意点" class="headerlink" title="记录一些C++开发日常的注意点"></a>记录一些C++开发日常的注意点</h1><h2 id="define函数"><a href="#define函数" class="headerlink" title="define函数"></a>define函数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> sum1(a,b) a+b</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> sum2(a,b) (a+b)</span></div></pre></td></tr></table></figure>
-<p>一般来说没有区别，但是当遇到下述的问题的时候，会有结合律上的问题。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">printf("%d\n“,3 * sum1(1,2)); //5 3 * 1 + 2</div><div class="line">printf("%d\n“,3 * sum2(1,2)); //9 3 * (1 + 2)</div></pre></td></tr></table></figure></p>
+        <h1 id="记录一些C-开发日常的注意点"><a href="#记录一些C-开发日常的注意点" class="headerlink" title="记录一些C++开发日常的注意点"></a>记录一些C++开发日常的注意点</h1><h2 id="define函数"><a href="#define函数" class="headerlink" title="define函数"></a>define函数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sum1(a,b) a+b</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sum2(a,b) (a+b)</span></span><br></pre></td></tr></table></figure>
+<p>一般来说没有区别，但是当遇到下述的问题的时候，会有结合律上的问题。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n“,3 * sum1(1,2)); //5 3 * 1 + 2</span></span><br><span class="line"><span class="string">printf("</span>%d\n“,<span class="number">3</span> * sum2(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">//9 3 * (1 + 2)</span></span><br></pre></td></tr></table></figure></p>
 <p>其实，只要记住，宏定义在预编译的时候，会展开，就很好理解了。</p>
 
       
@@ -495,6 +495,10 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/categories/">
+                    
+                  
+                    
                     
                       
                     
@@ -502,7 +506,7 @@
                     
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
-                  
+                  </a>
                 </div>
               
 
@@ -512,12 +516,16 @@
                 <div class="site-state-item site-state-tags">
                   
                     
+                      <a href="/tags/">
+                    
+                  
+                    
                     
                       
                     
                     <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
-                  
+                  </a>
                 </div>
               
             </nav>

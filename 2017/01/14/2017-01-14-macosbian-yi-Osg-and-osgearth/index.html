@@ -453,7 +453,7 @@
 <p><img src="/images/Osg_2.png" alt="生成"><br>选择好项目之后，点击Done，会出现图中红色部分。<br>点击Configure,CMake会根据CMakefileList.txt来查找对应源码的路径、第三方库的路径，如果没有错误，点击Generate生成对应的Makefile文件。</p>
 <p><strong>如果出错</strong></p>
 <p>这时候会有一个Error的弹窗，我们注意看下方的提示，往上找。看哪个必须的库没有找到。<br>一般来说这个是因为你系统里面没有这个库（可能是电脑没有库、也可能是库没有加到环境变量下）<br>如果是第一种，我们使用Homebrew这个软件安装就可以。<br>如：我们缺少gdal库。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install gdal</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gdal</span><br></pre></td></tr></table></figure>
 <p>安装完成之后，我们再次Configure，直到没有Error。</p>
 <p><strong>注意</strong></p>
 <p>Configure需要多次操作，直到我们把需要的库都找对。</p>
@@ -480,15 +480,15 @@
 </tbody>
 </table>
 <hr>
-<p>步骤三：<br>编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /Users/whisperchi/recent/OSG/OpenSceneGraph-3.4.0/ReleaseBuild</div><div class="line">$ make -j 8</div></pre></td></tr></table></figure></p>
-<p>如果编译过程中不出错，安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo make install</div></pre></td></tr></table></figure></p>
-<p><strong>如果编译出错</strong><br>首先我们要对编译过程有个了解，大致会遇到一下几类错误：<br>找不到头文件:    缺少对应库的开发包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install xxxx-dev</div></pre></td></tr></table></figure></p>
-<p>找不到实现:    没有该库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install xxx</div></pre></td></tr></table></figure></p>
+<p>步骤三：<br>编译<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /Users/whisperchi/recent/OSG/OpenSceneGraph-3.4.0/ReleaseBuild</span><br><span class="line">$ make -j 8</span><br></pre></td></tr></table></figure></p>
+<p>如果编译过程中不出错，安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure></p>
+<p><strong>如果编译出错</strong><br>首先我们要对编译过程有个了解，大致会遇到一下几类错误：<br>找不到头文件:    缺少对应库的开发包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install xxxx-dev</span><br></pre></td></tr></table></figure></p>
+<p>找不到实现:    没有该库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install xxx</span><br></pre></td></tr></table></figure></p>
 <p>语法错误:    这个可能是因为电脑上的库太久或者太新、接口在这些库升级之后已经变了。</p>
-<h3 id="OsgEarth编译"><a href="#OsgEarth编译" class="headerlink" title="OsgEarth编译"></a>OsgEarth编译</h3><p>与Osg编译类似，注意：编译OsgEarth前，需要我们已经编译安装完Osg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ osgversion</div></pre></td></tr></table></figure></p>
+<h3 id="OsgEarth编译"><a href="#OsgEarth编译" class="headerlink" title="OsgEarth编译"></a>OsgEarth编译</h3><p>与Osg编译类似，注意：编译OsgEarth前，需要我们已经编译安装完Osg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ osgversion</span><br></pre></td></tr></table></figure></p>
 <p>如果能够看到osg的版本，说明Osg编译成功<br><strong>注意</strong><br>Configure的时候，要注意Osg的相关库有没有找到</p>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
-<li>Gdal<br>这个是Gdal源码的一个错误，将某个类的析构函数声明为Protected类型。<br>我这边直接修改的Gdal的头文件，将Protected改为了Public类型<br>详见Github上的讨论。<br><a href="https://github.com/openstreetmap/osm2pgsql/issues/634" target="_blank" rel="external">github解决方案</a></li>
+<li>Gdal<br>这个是Gdal源码的一个错误，将某个类的析构函数声明为Protected类型。<br>我这边直接修改的Gdal的头文件，将Protected改为了Public类型<br>详见Github上的讨论。<br><a href="https://github.com/openstreetmap/osm2pgsql/issues/634" target="_blank" rel="noopener">github解决方案</a></li>
 <li>Cocoa例子编译失败<br>这个是Osg源码里面Cocoa的例子代码不对。<br>替换为最新版本的源码里面的例子即可 src/example/osgviewerCocoa 替换这个文件夹，即可。</li>
 </ol>
 
@@ -616,6 +616,10 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/categories/">
+                    
+                  
+                    
                     
                       
                     
@@ -623,7 +627,7 @@
                     
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
-                  
+                  </a>
                 </div>
               
 
@@ -633,12 +637,16 @@
                 <div class="site-state-item site-state-tags">
                   
                     
+                      <a href="/tags/">
+                    
+                  
+                    
                     
                       
                     
                     <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
-                  
+                  </a>
                 </div>
               
             </nav>
