@@ -313,6 +313,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/62275/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WhisperChi">
+      <meta itemprop="description" content="Nothing is impossible.">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WhisperChi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/62275/" class="post-title-link" itemprop="url">hexo-markdown-image</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-15 21:38:03" itemprop="dateCreated datePublished" datetime="2019-05-15T21:38:03+08:00">2019-05-15</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="hexo-use-image-with-Markdown"><a href="#hexo-use-image-with-Markdown" class="headerlink" title="hexo use image with Markdown"></a>hexo use image with Markdown</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>记录hexo博客，使用<code>Markdown</code>语法，插入图片时遇到的问题。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用<code>Markdown</code>编辑文章时，插入图片，会遇到以下一些问题：</p>
+<ol>
+<li>编辑器中使用很好，但是部署到服务器，图片资源找不到</li>
+<li>编辑器中使用<code>/image/xxx.png</code>这样的路径，服务器可以找到，但是编辑器无法显示图片</li>
+</ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li><p>使用图床，两者都是用网络路径</p>
+</li>
+<li><p>使用本地路径</p>
+<ul>
+<li><p>将<code>_config.yml</code>中的<code>post_asset_folder</code>设置为<code>true</code></p>
+</li>
+<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo n <span class="string">'aaa'</span></span></span><br></pre></td></tr></table></figure>
+<p>这是会生成<code>aaa.md</code>文件和<code>aaa</code>文件夹，将资源放置在aaa文件夹下，<code>Markdown</code>中使用相对路径</p>
+<p>此时的目录结构</p>
+<p><img src="/posts/62275/structure.png" alt></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](./aaa/1.png)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装<code>hexo-asset-image</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> yourBlogDir</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/xcodebuild/hexo-asset-image.git node_modules/hexo-asset-image</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rm -rf node_modules/hexo-asset-image/.git</span></span><br></pre></td></tr></table></figure>
+<p>因为作者代码修改之后，没有对应更新<code>npm</code>包，所以需要自己下载源码，然后删除不必要的<code>.git文件夹</code>以节省硬盘空间</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://github.com/xcodebuild/hexo-asset-image/issues/41" target="_blank" rel="noopener">hexo-asset-image上的Issues</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/59377/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1092,7 +1257,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1142,7 +1307,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
