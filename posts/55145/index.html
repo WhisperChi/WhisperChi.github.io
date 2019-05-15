@@ -103,13 +103,13 @@
 <meta property="og:site_name" content="WhisperChi">
 <meta property="og:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://whisperchi.com/.com//Osg_1.png">
-<meta property="og:image" content="https://whisperchi.com/.com//Osg_2.png">
+<meta property="og:image" content="https://whisperchi.com/posts/55145/Osg_1.png">
+<meta property="og:image" content="https://whisperchi.com/posts/55145/Osg_2.png">
 <meta property="og:updated_time" content="2019-05-15T09:01:52.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS编译Osg&amp;amp;OsgEarth">
 <meta name="twitter:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
-<meta name="twitter:image" content="https://whisperchi.com/.com//Osg_1.png">
+<meta name="twitter:image" content="https://whisperchi.com/posts/55145/Osg_1.png">
 
 
 
@@ -478,10 +478,10 @@
 </tbody>
 </table>
 <h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h3 id="Osg编译"><a href="#Osg编译" class="headerlink" title="Osg编译"></a>Osg编译</h3><p>步骤一：</p>
-<p>CMake源码，生成生成本平台能够编译的项目<br>说明：CMake的作用是将源码生成当前操作系统的编译器能够编译的文件，如：VS平台的VS2010工程、Linux平台的Makefile文件、Mac上的Xcode项目等。<br><img src="/.com//Osg_1.png" alt="配置路径"><br>选择源码与项目生成目录，在3处选择生成的项目类型（我比较熟悉Makefile，一下以Makefile为例），当然如果你熟悉CodeBlocks、Xcode、Eclipse等，也可以生成相应的项目文件。</p>
+<p>CMake源码，生成生成本平台能够编译的项目<br>说明：CMake的作用是将源码生成当前操作系统的编译器能够编译的文件，如：VS平台的VS2010工程、Linux平台的Makefile文件、Mac上的Xcode项目等。<br><img src="/posts/55145/Osg_1.png" alt="配置路径"><br>选择源码与项目生成目录，在3处选择生成的项目类型（我比较熟悉Makefile，一下以Makefile为例），当然如果你熟悉CodeBlocks、Xcode、Eclipse等，也可以生成相应的项目文件。</p>
 <hr>
 <p>步骤二：</p>
-<p><img src="/.com//Osg_2.png" alt="生成"><br>选择好项目之后，点击Done，会出现图中红色部分。<br>点击Configure,CMake会根据CMakefileList.txt来查找对应源码的路径、第三方库的路径，如果没有错误，点击Generate生成对应的Makefile文件。</p>
+<p><img src="/posts/55145/Osg_2.png" alt="生成"><br>选择好项目之后，点击Done，会出现图中红色部分。<br>点击Configure,CMake会根据CMakefileList.txt来查找对应源码的路径、第三方库的路径，如果没有错误，点击Generate生成对应的Makefile文件。</p>
 <p><strong>如果出错</strong></p>
 <p>这时候会有一个Error的弹窗，我们注意看下方的提示，往上找。看哪个必须的库没有找到。<br>一般来说这个是因为你系统里面没有这个库（可能是电脑没有库、也可能是库没有加到环境变量下）<br>如果是第一种，我们使用Homebrew这个软件安装就可以。<br>如：我们缺少gdal库。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gdal</span><br></pre></td></tr></table></figure>
