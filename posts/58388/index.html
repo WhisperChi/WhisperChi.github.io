@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="WhisperChi">
 <meta property="og:description" content="Ubuntu18.04升级内核5.1之后黑屏具体描述源码编译kernel5.1.1，grub更新之后，重启系统，选中5.1.1内核，黑屏">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-16T08:12:40.429Z">
+<meta property="og:updated_time" content="2019-05-16T08:12:46.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu18.04-black-screen">
 <meta name="twitter:description" content="Ubuntu18.04升级内核5.1之后黑屏具体描述源码编译kernel5.1.1，grub更新之后，重启系统，选中5.1.1内核，黑屏">
@@ -174,7 +174,8 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+    </div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -428,7 +429,7 @@
 </li>
 </ol>
 <p>至此，有个想法，感觉是显示器无法展现的问题，这个就和显卡驱动有关了。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt purge nvidia-*</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt purge nvidia-*</span></span><br></pre></td></tr></table></figure>
 <p>移除NVIDIA所有驱动之后，重启可以了。</p>
 <h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ol>
 <li>升级内核为什么会影响原有显卡驱动</li>
