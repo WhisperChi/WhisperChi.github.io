@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="李小飞">
-<meta property="og:type" content="website">
-<meta property="og:title" content="friends">
-<meta property="og:url" content="https://whisperchi.com/friends/index.html">
+  <meta name="description" content="Ubuntu18.04升级内核5.1之后黑屏具体描述源码编译kernel5.1.1，grub更新之后，重启系统，选中5.1.1内核，黑屏">
+<meta name="keywords" content="Linux,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu18.04-black-screen">
+<meta property="og:url" content="https://whisperchi.com/posts/58388/index.html">
 <meta property="og:site_name" content="WhisperChi">
-<meta property="og:description" content="李小飞">
+<meta property="og:description" content="Ubuntu18.04升级内核5.1之后黑屏具体描述源码编译kernel5.1.1，grub更新之后，重启系统，选中5.1.1内核，黑屏">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-08T09:07:09.614Z">
+<meta property="og:updated_time" content="2019-05-16T08:12:40.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="friends">
-<meta name="twitter:description" content="李小飞">
+<meta name="twitter:title" content="Ubuntu18.04-black-screen">
+<meta name="twitter:description" content="Ubuntu18.04升级内核5.1之后黑屏具体描述源码编译kernel5.1.1，grub更新之后，重启系统，选中5.1.1内核，黑屏">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://whisperchi.com/friends/">
+  <link rel="canonical" href="https://whisperchi.com/posts/58388/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>friends | WhisperChi</title>
+  <title>Ubuntu18.04-black-screen | WhisperChi</title>
   
 
 
@@ -244,7 +245,7 @@
         
         
           
-          <li class="menu-item menu-item-links menu-item-active">
+          <li class="menu-item menu-item-links">
 
     
     
@@ -293,68 +294,208 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/58388/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WhisperChi">
+      <meta itemprop="description" content="Nothing is impossible.">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WhisperChi">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">friends
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p><a href="https://lixf.io" target="_blank" rel="noopener">李小飞</a></p>
+          <h1 class="post-title" itemprop="name headline">Ubuntu18.04-black-screen
 
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-16 16:02:49" itemprop="dateCreated datePublished" datetime="2019-05-16T16:02:49+08:00">2019-05-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="Ubuntu18-04升级内核5-1之后黑屏"><a href="#Ubuntu18-04升级内核5-1之后黑屏" class="headerlink" title="Ubuntu18.04升级内核5.1之后黑屏"></a>Ubuntu18.04升级内核5.1之后黑屏</h1><h2 id="具体描述"><a href="#具体描述" class="headerlink" title="具体描述"></a>具体描述</h2><p>源码编译kernel5.1.1，grub更新之后，重启系统，选中5.1.1内核，黑屏</p>
+<a id="more"></a>
+<h2 id="故障排查"><a href="#故障排查" class="headerlink" title="故障排查"></a>故障排查</h2><ol>
+<li><p><code>Ctrl</code>+<code>Alt</code>+<code>F1</code>，无法打开<code>tty</code>终端</p>
+<p>感觉不是图形界面<code>gnome</code>的问题，如果是这个问题，<code>tty</code>应该可以进入</p>
+</li>
+<li><p>远程ssh可以使用</p>
+<p>说明是图形界面无法进入</p>
+</li>
+</ol>
+<p>至此，有个想法，感觉是显示器无法展现的问题，这个就和显卡驱动有关了。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt purge nvidia-*</span><br></pre></td></tr></table></figure>
+<p>移除NVIDIA所有驱动之后，重启可以了。</p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ol>
+<li>升级内核为什么会影响原有显卡驱动</li>
+<li>NVIDIA在Ubuntu上支持如何</li>
+</ol>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/22337/" rel="next" title="nginx-compile">
+                <i class="fa fa-chevron-left"></i> nginx-compile
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -383,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -530,6 +680,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04升级内核5-1之后黑屏"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu18.04升级内核5.1之后黑屏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体描述"><span class="nav-number">1.1.</span> <span class="nav-text">具体描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#故障排查"><span class="nav-number">1.2.</span> <span class="nav-text">故障排查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.2.1.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">1.3.</span> <span class="nav-text">思考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
