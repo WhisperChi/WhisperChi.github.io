@@ -96,18 +96,21 @@
 
 
 
-  <meta name="description" content="hexo访问速度优化简介不少使用hexo的小伙伴，会因为它的速度问题而纠结。 github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。 本文通过将hexo分别部署到gitee与github，并且添加自定义域名。优化国内外访问速度。">
+  <meta name="description" content="hexo多线部署访问优化简介不少使用hexo的小伙伴，会因为它的速度问题而纠结。 github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。 本文通过将hexo分别部署到gitee、github、coding，并且添加自定义域名。优化国内外访问速度。 注：此篇适合有一定hexo部署基础的同学，如果之前没有接触过，请移步使用hexo十分钟搭建个人博客">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo_on_gitee">
 <meta property="og:url" content="https://whisperchi.com/posts/35930/index.html">
 <meta property="og:site_name" content="WhisperChi">
-<meta property="og:description" content="hexo访问速度优化简介不少使用hexo的小伙伴，会因为它的速度问题而纠结。 github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。 本文通过将hexo分别部署到gitee与github，并且添加自定义域名。优化国内外访问速度。">
+<meta property="og:description" content="hexo多线部署访问优化简介不少使用hexo的小伙伴，会因为它的速度问题而纠结。 github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。 本文通过将hexo分别部署到gitee、github、coding，并且添加自定义域名。优化国内外访问速度。 注：此篇适合有一定hexo部署基础的同学，如果之前没有接触过，请移步使用hexo十分钟搭建个人博客">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-09T03:00:07.975Z">
+<meta property="og:image" content="https://whisperchi.com/posts/35930/coding1.png">
+<meta property="og:image" content="https://whisperchi.com/posts/35930/coding2.png">
+<meta property="og:updated_time" content="2020-03-09T12:52:42.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo_on_gitee">
-<meta name="twitter:description" content="hexo访问速度优化简介不少使用hexo的小伙伴，会因为它的速度问题而纠结。 github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。 本文通过将hexo分别部署到gitee与github，并且添加自定义域名。优化国内外访问速度。">
+<meta name="twitter:description" content="hexo多线部署访问优化简介不少使用hexo的小伙伴，会因为它的速度问题而纠结。 github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。 本文通过将hexo分别部署到gitee、github、coding，并且添加自定义域名。优化国内外访问速度。 注：此篇适合有一定hexo部署基础的同学，如果之前没有接触过，请移步使用hexo十分钟搭建个人博客">
+<meta name="twitter:image" content="https://whisperchi.com/posts/35930/coding1.png">
 
 
 
@@ -451,11 +454,61 @@
       
 
       
-        <h1 id="hexo访问速度优化"><a href="#hexo访问速度优化" class="headerlink" title="hexo访问速度优化"></a>hexo访问速度优化</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>不少使用hexo的小伙伴，会因为它的速度问题而纠结。</p>
+        <h1 id="hexo多线部署访问优化"><a href="#hexo多线部署访问优化" class="headerlink" title="hexo多线部署访问优化"></a>hexo多线部署访问优化</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>不少使用hexo的小伙伴，会因为它的速度问题而纠结。</p>
 <p>github在国内访问速度相对较慢。有没有什么方便的方式来提速呢。</p>
-<p>本文通过将hexo分别部署到gitee与github，并且添加自定义域名。优化国内外访问速度。</p>
+<p>本文通过将hexo分别部署到gitee、github、coding，并且添加自定义域名。优化国内外访问速度。</p>
+<p>注：此篇适合有一定hexo部署基础的同学，如果之前没有接触过，请移步<a href>使用hexo十分钟搭建个人博客</a></p>
 <a id="more"></a>
-<h2 id="gitee部署hexo"><a href="#gitee部署hexo" class="headerlink" title="gitee部署hexo"></a>gitee部署hexo</h2>
+<h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><table>
+<thead>
+<tr>
+<th>平台</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>github</td>
+<td>国外服务器，支持自定义域名</td>
+</tr>
+<tr>
+<td>coding</td>
+<td>服务器在国内</td>
+</tr>
+<tr>
+<td>gitee</td>
+<td>国内服务器，自定义域名收费</td>
+</tr>
+</tbody>
+</table>
+<h2 id="coding部署hexo"><a href="#coding部署hexo" class="headerlink" title="coding部署hexo"></a>coding部署hexo</h2><ol>
+<li><p>新建项目，选择<code>DevOps项目</code>模板</p>
+<p><img src="/posts/35930/coding1.png" alt></p>
+</li>
+<li><p>勾选public</p>
+<p><img src="/posts/35930/coding2.png" alt></p>
+</li>
+<li><p>代码仓库-&gt;仓库设置，将地址填入hexo配置文件</p>
+<p>注：最好选择ssh协议(此前需要将本机公钥导入coding)</p>
+<p>打开hexo博客目录下的<code>_config.yml</code>文件，在最后填入</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span></span><br><span class="line"><span class="attr">    coding:</span> <span class="string">&lt;your-coding-url&gt;</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>填写完之后，执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure>
+<p>将网页上传到仓库中</p>
+</li>
+<li><p>coding网站pages设置</p>
+<p>在coding将个人版与企业版合并之后，原先的<code>pages</code>按钮不见了。</p>
+<p>新按钮在<code>构建与部署</code>-&gt;<code>静态网站</code></p>
+<p>注：发布前需要实名认证，填写手机号和身份证信息。</p>
+<p>默认就行，<code>网站名称</code>看个人想法。</p>
+</li>
+<li><p>自定义域名</p>
+<p>再次点击<code>静态网站</code>，可以看到页面变得与之前不一样了。</p>
+<p>在右上角点击<code>设置</code>，然后下拉，有个自定义域名。在这边直接填写就行了。</p>
+</li>
+</ol>
+<h2 id="多线CDN"><a href="#多线CDN" class="headerlink" title="多线CDN"></a>多线CDN</h2><p>原先的github可以继续部署，在选择DNS解析的时候，选择可以区分国内网线路的DNS解析厂商。来将国内国外的访问分流即可。</p>
+
       
     </div>
 
@@ -716,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo访问速度优化"><span class="nav-number">1.</span> <span class="nav-text">hexo访问速度优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitee部署hexo"><span class="nav-number">1.2.</span> <span class="nav-text">gitee部署hexo</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo多线部署访问优化"><span class="nav-number">1.</span> <span class="nav-text">hexo多线部署访问优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介-1"><span class="nav-number">1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#coding部署hexo"><span class="nav-number">1.3.</span> <span class="nav-text">coding部署hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线CDN"><span class="nav-number">1.4.</span> <span class="nav-text">多线CDN</span></a></li></ol></li></ol></div>
             
 
           </div>
