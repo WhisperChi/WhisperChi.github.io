@@ -364,6 +364,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/16797/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WhisperChi">
+      <meta itemprop="description" content="Nothing is impossible.">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WhisperChi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/16797/" class="post-title-link" itemprop="url">raspberry-system</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-03-17 19:34:46" itemprop="dateCreated datePublished" datetime="2020-03-17T19:34:46+08:00">2020-03-17</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="MacOS给树莓派安装系统"><a href="#MacOS给树莓派安装系统" class="headerlink" title="MacOS给树莓派安装系统"></a>MacOS给树莓派安装系统</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>系统下载，参考<a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">树莓派官网下载页</a></p>
+<p>一般选择raspbain就行。其他系统看个人需要。</p>
+<h2 id="MacOS安装"><a href="#MacOS安装" class="headerlink" title="MacOS安装"></a>MacOS安装</h2><ol>
+<li><p>插入SD卡，查看SD卡</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo diskutil list</span></span><br></pre></td></tr></table></figure>
+<p><img src="/posts/16797/list.png" alt></p>
+</li>
+<li><p>卸载SD卡</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo diskutil umount /dev/disk2s2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>烧录镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo dd bs=1m <span class="keyword">if</span>=&lt;your-image&gt; of=&lt;your-sdcard&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>  出现如下提示，说明烧录完成。</p>
+<p>  <img src="/posts/16797/over.png" alt></p>
+<p>  此时在磁盘管理那边可以看到，SD卡出现了<code>boot</code>分区</p>
+<p>  <img src="/posts/16797/done.png" alt></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/35930/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -598,9 +754,15 @@
 <p><code>php</code>、<code>mysql</code>、<code>redis</code>等等单独配置比较麻烦，因此选择<code>docker</code>来作为解决方案。编写<code>docker-compose.yml</code>，完成容器编排。</p>
 <h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><p>比较了市面上的owncloud、nextcloud以及seafile。最终选择了nextcloud。</p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li>docker安装</li>
-<li>docker-compose安装</li>
-<li>git安装</li>
+<li><p>docker安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>docker-compose安装</p>
+</li>
+<li><p>git安装</p>
+</li>
 </ul>
 <p>详情见github <a href="git@github.com:WhisperChi/rpi-nextcloud.git">树莓派使用docker-compose搭建nextcloud私有云盘</a></p>
 
@@ -1686,152 +1848,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/13047/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WhisperChi">
-      <meta itemprop="description" content="Nothing is impossible.">
-      <meta itemprop="image" content="/images/author.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WhisperChi">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/13047/" class="post-title-link" itemprop="url">C++ tips</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-01-18 16:23:18" itemprop="dateCreated datePublished" datetime="2017-01-18T16:23:18+08:00">2017-01-18</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>记录一些C++开发日常的注意点</p>
-<p><code>define</code></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/posts/13047/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1880,7 +1896,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1948,7 +1964,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
