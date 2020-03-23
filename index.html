@@ -755,16 +755,44 @@
 <h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><p>比较了市面上的owncloud、nextcloud以及seafile。最终选择了nextcloud。</p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
 <li><p>docker安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -fsSL https://get.docker.com -o get-docker.sh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo bash get-docker.sh</span></span><br></pre></td></tr></table></figure>
+<p>安装完毕之后，记得赋予当前用户组docker使用权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo usermod -aG docker pi</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><p>docker-compose安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pip3 install docker-compose</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>git安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install git -y</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>详情见github <a href="git@github.com:WhisperChi/rpi-nextcloud.git">树莓派使用docker-compose搭建nextcloud私有云盘</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>详情见github <a href="https://github.com/WhisperChi/rpi-nextcloud" target="_blank" rel="noopener">树莓派使用docker-compose搭建nextcloud私有云盘</a></p>
+<ol>
+<li><p>拉取我配置好的<code>docker-compose.yml</code>文件，同时初始化文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/WhisperChi/rpi-nextcloud.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> rpi-nextcloud</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> bash init_dir.sh</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<code>docker-compose.yml</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MYSQL_ROOT_PASSWORD=&lt;your-mariadb-root-passwd&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改数据库密码</p>
+<p>打开<code>db.env</code>文件，修改为</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MYSQL_PASSWORD=&lt;your-db-passwd&gt;</span></span><br><span class="line"><span class="string">MYSQL_DATABASE=nextcloud</span></span><br><span class="line"><span class="string">MYSQL_USER=nextcloud</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker-compose up -d</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h2><ol>
+<li><p>docker-compose安装失败</p>
+<p>现象：pip安装失败，表现为超时或者SSL验证错误</p>
+<p>配置pip国内源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">   $</span><span class="bash"> mkdir -p ~/.config/pip</span></span><br><span class="line"><span class="meta">   $</span><span class="bash"> <span class="built_in">cd</span> ~/.config/pip</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch pip.conf</span></span><br></pre></td></tr></table></figure>
+<p>将<code>pip.conf</code>修改为如下清华源</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="string">[global]</span></span><br><span class="line">   <span class="string">index-url</span> <span class="string">=</span> <span class="attr">https://pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line">   <span class="string">[install]</span></span><br><span class="line"><span class="string">trusted-host=pypi.tuna.tsinghua.edu.cn</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   设置超时参数</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pip3 install docker-compose --default-timeout=100</span></span><br></pre></td></tr></table></figure>
 
           
         
