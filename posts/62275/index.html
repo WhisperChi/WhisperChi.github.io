@@ -459,14 +459,14 @@
 <ul>
 <li><p>将<code>_config.yml</code>中的<code>post_asset_folder</code>设置为<code>true</code></p>
 </li>
-<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo n 'aaa'</span><br></pre></td></tr></table></figure>
+<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo n <span class="string">'aaa'</span></span></span><br></pre></td></tr></table></figure>
 <p>这是会生成<code>aaa.md</code>文件和<code>aaa</code>文件夹，将资源放置在aaa文件夹下，<code>Markdown</code>中使用相对路径</p>
 <p>此时的目录结构</p>
 <p><img src="/posts/62275/structure.png" alt></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](./aaa/1.png)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装<code>hexo-asset-image</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd yourBlogDir</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/xcodebuild/hexo-asset-image.git node_modules/hexo-asset-image</span><br><span class="line"><span class="meta">$</span> rm -rf node_modules/hexo-asset-image/.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> yourBlogDir</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/xcodebuild/hexo-asset-image.git node_modules/hexo-asset-image</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rm -rf node_modules/hexo-asset-image/.git</span></span><br></pre></td></tr></table></figure>
 <p>因为作者代码修改之后，没有对应更新<code>npm</code>包，所以需要自己下载源码，然后删除不必要的<code>.git文件夹</code>以节省硬盘空间</p>
 </li>
 </ul>
