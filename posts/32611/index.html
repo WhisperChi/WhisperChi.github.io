@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="WhisperChi">
 <meta property="og:description" content="树莓派从零安装nextcloud翻出家里之前搁置的树莓派3B+，配置了继电器和风扇来根据温度控制之后，想着搭建一个私有云。 php、mysql、redis等等单独配置比较麻烦，因此选择docker来作为解决方案。编写docker-compose.yml，完成容器编排。 选型比较了市面上的owncloud、nextcloud以及seafile。最终选择了nextcloud。 环境准备 docker安">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-23T13:18:58.175Z">
+<meta property="og:updated_time" content="2020-04-11T16:19:20.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nextcloud_on_raspberry">
 <meta name="twitter:description" content="树莓派从零安装nextcloud翻出家里之前搁置的树莓派3B+，配置了继电器和风扇来根据温度控制之后，想着搭建一个私有云。 php、mysql、redis等等单独配置比较麻烦，因此选择docker来作为解决方案。编写docker-compose.yml，完成容器编排。 选型比较了市面上的owncloud、nextcloud以及seafile。最终选择了nextcloud。 环境准备 docker安">
@@ -481,7 +481,7 @@
 <p>配置pip国内源</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">   $</span><span class="bash"> mkdir -p ~/.config/pip</span></span><br><span class="line"><span class="meta">   $</span><span class="bash"> <span class="built_in">cd</span> ~/.config/pip</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch pip.conf</span></span><br></pre></td></tr></table></figure>
 <p>将<code>pip.conf</code>修改为如下清华源</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="string">[global]</span></span><br><span class="line">   <span class="string">index-url</span> <span class="string">=</span> <span class="attr">https://pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line">   <span class="string">[install]</span></span><br><span class="line"><span class="string">trusted-host=pypi.tuna.tsinghua.edu.cn</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="string">[global]</span></span><br><span class="line">   <span class="string">index-url</span> <span class="string">=</span> <span class="attr">http://pypi.douban.com/simple</span></span><br><span class="line">   <span class="string">extra-index-url</span> <span class="string">=</span> <span class="attr">https://pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line"><span class="string">trusted-host</span> <span class="string">=</span></span><br><span class="line">       <span class="string">pypi.douban.com</span></span><br><span class="line">       <span class="string">pypi.tuna.tsinghua</span></span><br><span class="line">   <span class="string">timeout</span> <span class="string">=</span> <span class="number">120</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>   设置超时参数</p>
@@ -605,7 +605,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

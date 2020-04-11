@@ -96,20 +96,18 @@
 
 
 
-  <meta name="description" content="便捷工具推荐简介记录了一些日常工作生活的便捷软件">
-<meta name="keywords" content="tools">
+  <meta name="description" content="nginx部署https简介使用let&amp;#39;s encrypt 命令 单独域名 1$ certbot certonly --standalone --preferred-challenges http  -d &amp;lt;your-domain&amp;gt;  valid cert 1$ certbot certonly -d &amp;lt;*.example.com&amp;gt; --manual --prefe">
+<meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tools">
-<meta property="og:url" content="https://whisperchi.com/posts/59377/index.html">
+<meta property="og:title" content="https-on-nginx">
+<meta property="og:url" content="https://whisperchi.com/posts/10292/index.html">
 <meta property="og:site_name" content="WhisperChi">
-<meta property="og:description" content="便捷工具推荐简介记录了一些日常工作生活的便捷软件">
+<meta property="og:description" content="nginx部署https简介使用let&amp;#39;s encrypt 命令 单独域名 1$ certbot certonly --standalone --preferred-challenges http  -d &amp;lt;your-domain&amp;gt;  valid cert 1$ certbot certonly -d &amp;lt;*.example.com&amp;gt; --manual --prefe">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://whisperchi.com/posts/59377/terminus.png">
-<meta property="og:updated_time" content="2019-05-15T13:35:42.574Z">
+<meta property="og:updated_time" content="2020-03-30T15:40:27.187Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tools">
-<meta name="twitter:description" content="便捷工具推荐简介记录了一些日常工作生活的便捷软件">
-<meta name="twitter:image" content="https://whisperchi.com/posts/59377/terminus.png">
+<meta name="twitter:title" content="https-on-nginx">
+<meta name="twitter:description" content="nginx部署https简介使用let&amp;#39;s encrypt 命令 单独域名 1$ certbot certonly --standalone --preferred-challenges http  -d &amp;lt;your-domain&amp;gt;  valid cert 1$ certbot certonly -d &amp;lt;*.example.com&amp;gt; --manual --prefe">
 
 
 
@@ -117,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://whisperchi.com/posts/59377/">
+  <link rel="canonical" href="https://whisperchi.com/posts/10292/">
 
 
 
@@ -127,7 +125,7 @@
   };
 </script>
 
-  <title>tools | WhisperChi</title>
+  <title>https-on-nginx | WhisperChi</title>
   
 
 
@@ -367,7 +365,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/59377/">
+    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/10292/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WhisperChi">
@@ -384,7 +382,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tools
+          <h1 class="post-title" itemprop="name headline">https-on-nginx
 
               
             
@@ -410,7 +408,7 @@
                 
               
 
-              <time title="Created: 2019-05-15 16:49:34" itemprop="dateCreated datePublished" datetime="2019-05-15T16:49:34+08:00">2019-05-15</time>
+              <time title="Created: 2020-03-30 22:05:37" itemprop="dateCreated datePublished" datetime="2020-03-30T22:05:37+08:00">2020-03-30</time>
             
 
             
@@ -445,13 +443,15 @@
       
 
       
-        <h1 id="便捷工具推荐"><a href="#便捷工具推荐" class="headerlink" title="便捷工具推荐"></a>便捷工具推荐</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>记录了一些日常工作生活的便捷软件</p>
-<a id="more"></a>
-<ol>
-<li><a href="https://eugeny.github.io/terminus/" target="_blank" rel="noopener">terminus</a></li>
-</ol>
-<p><img src="/posts/59377/terminus.png" alt></p>
-<p>这是一个支持多平台的终端，采用electron跨平台桌面应用框架。</p>
+        <h1 id="nginx部署https"><a href="#nginx部署https" class="headerlink" title="nginx部署https"></a>nginx部署https</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>使用<code>let&#39;s encrypt</code></p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li><p>单独域名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> certbot certonly --standalone --preferred-challenges http  -d &lt;your-domain&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>valid cert</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> certbot certonly -d &lt;*.example.com&gt; --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -475,7 +475,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tools/" rel="tag"># tools</a>
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
           
         </div>
       
@@ -488,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/20076/" rel="next" title="Ubuntu chromium compile">
-                <i class="fa fa-chevron-left"></i> Ubuntu chromium compile
+              <a href="/posts/16797/" rel="next" title="raspberry-system">
+                <i class="fa fa-chevron-left"></i> raspberry-system
               </a>
             
           </div>
@@ -497,10 +497,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/62275/" rel="prev" title="hexo-markdown-image">
-                hexo-markdown-image <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -719,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#便捷工具推荐"><span class="nav-number">1.</span> <span class="nav-text">便捷工具推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nginx部署https"><span class="nav-number">1.</span> <span class="nav-text">nginx部署https</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">1.2.</span> <span class="nav-text">命令</span></a></li></ol></li></ol></div>
             
 
           </div>
