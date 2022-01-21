@@ -883,27 +883,17 @@
 
       
         
-          
-            <h1 id="MacOS给树莓派安装系统"><a href="#MacOS给树莓派安装系统" class="headerlink" title="MacOS给树莓派安装系统"></a>MacOS给树莓派安装系统</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>系统下载，参考<a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">树莓派官网下载页</a></p>
+          <h1 id="MacOS给树莓派安装系统"><a href="#MacOS给树莓派安装系统" class="headerlink" title="MacOS给树莓派安装系统"></a>MacOS给树莓派安装系统</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>系统下载，参考<a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">树莓派官网下载页</a></p>
 <p>一般选择raspbain就行。其他系统看个人需要。</p>
-<h2 id="MacOS安装"><a href="#MacOS安装" class="headerlink" title="MacOS安装"></a>MacOS安装</h2><ol>
-<li><p>插入SD卡，查看SD卡</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo diskutil list</span></span><br></pre></td></tr></table></figure>
-<p><img src="/posts/16797/list.png" alt></p>
-</li>
-<li><p>卸载SD卡</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo diskutil umount /dev/disk2s2</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>烧录镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo dd bs=1m <span class="keyword">if</span>=&lt;your-image&gt; of=&lt;your-sdcard&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>  出现如下提示，说明烧录完成。</p>
-<p>  <img src="/posts/16797/over.png" alt></p>
-<p>  此时在磁盘管理那边可以看到，SD卡出现了<code>boot</code>分区</p>
-<p>  <img src="/posts/16797/done.png" alt></p>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/16797/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1039,52 +1029,18 @@
 
       
         
-          
-            <h1 id="树莓派从零安装nextcloud"><a href="#树莓派从零安装nextcloud" class="headerlink" title="树莓派从零安装nextcloud"></a>树莓派从零安装nextcloud</h1><p>翻出家里之前搁置的树莓派3B+，配置了继电器和风扇来根据温度控制之后，想着搭建一个私有云。</p>
+          <h1 id="树莓派从零安装nextcloud"><a href="#树莓派从零安装nextcloud" class="headerlink" title="树莓派从零安装nextcloud"></a>树莓派从零安装nextcloud</h1><p>翻出家里之前搁置的树莓派3B+，配置了继电器和风扇来根据温度控制之后，想着搭建一个私有云。</p>
 <p><code>php</code>、<code>mysql</code>、<code>redis</code>等等单独配置比较麻烦，因此选择<code>docker</code>来作为解决方案。编写<code>docker-compose.yml</code>，完成容器编排。</p>
 <h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><p>比较了市面上的owncloud、nextcloud以及seafile。最终选择了nextcloud。</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li><p>docker安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -fsSL https://get.docker.com -o get-docker.sh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo bash get-docker.sh</span></span><br></pre></td></tr></table></figure>
-<p>安装完毕之后，记得赋予当前用户组docker使用权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo usermod -aG docker pi</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>docker-compose安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pip3 install docker-compose</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install git -y</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>详情见github <a href="https://github.com/WhisperChi/rpi-nextcloud" target="_blank" rel="noopener">树莓派使用docker-compose搭建nextcloud私有云盘</a></p>
-<ol>
-<li><p>拉取我配置好的<code>docker-compose.yml</code>文件，同时初始化文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/WhisperChi/rpi-nextcloud.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> rpi-nextcloud</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> bash init_dir.sh</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改<code>docker-compose.yml</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MYSQL_ROOT_PASSWORD=&lt;your-mariadb-root-passwd&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改数据库密码</p>
-<p>打开<code>db.env</code>文件，修改为</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">MYSQL_PASSWORD=&lt;your-db-passwd&gt;</span></span><br><span class="line"><span class="string">MYSQL_DATABASE=nextcloud</span></span><br><span class="line"><span class="string">MYSQL_USER=nextcloud</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker-compose up -d</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h2><ol>
-<li><p>docker-compose安装失败</p>
-<p>现象：pip安装失败，表现为超时或者SSL验证错误</p>
-<p>配置pip国内源</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">   $</span><span class="bash"> mkdir -p ~/.config/pip</span></span><br><span class="line"><span class="meta">   $</span><span class="bash"> <span class="built_in">cd</span> ~/.config/pip</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch pip.conf</span></span><br></pre></td></tr></table></figure>
-<p>将<code>pip.conf</code>修改为如下清华源</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="string">[global]</span></span><br><span class="line">   <span class="string">index-url</span> <span class="string">=</span> <span class="attr">http://pypi.douban.com/simple</span></span><br><span class="line">   <span class="string">extra-index-url</span> <span class="string">=</span> <span class="attr">https://pypi.tuna.tsinghua.edu.cn/simple</span></span><br><span class="line"><span class="string">trusted-host</span> <span class="string">=</span></span><br><span class="line">       <span class="string">pypi.douban.com</span></span><br><span class="line">       <span class="string">pypi.tuna.tsinghua</span></span><br><span class="line">   <span class="string">timeout</span> <span class="string">=</span> <span class="number">120</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>   设置超时参数</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pip3 install docker-compose --default-timeout=100</span></span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/32611/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
