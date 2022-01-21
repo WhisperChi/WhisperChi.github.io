@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
+  <meta name="description" content="简介这个是一篇MacOS上编译OSG和OSGEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(OSG)和OSGEarth库。后来换了笔记本，把MacOS的版本一起编译了，补全了常见的Android、IOS、Windows、Linux、MacOS各个操作系统编译实践。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacOS编译Osg&amp;amp;OsgEarth">
+<meta property="og:title" content="MacOS编译OSG&amp;amp;OSGEarth">
 <meta property="og:url" content="https://whisperchi.com/posts/55145/index.html">
 <meta property="og:site_name" content="WhisperChi">
-<meta property="og:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
+<meta property="og:description" content="简介这个是一篇MacOS上编译OSG和OSGEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(OSG)和OSGEarth库。后来换了笔记本，把MacOS的版本一起编译了，补全了常见的Android、IOS、Windows、Linux、MacOS各个操作系统编译实践。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://whisperchi.com/posts/55145/Osg_1.png">
-<meta property="og:image" content="https://whisperchi.com/posts/55145/Osg_2.png">
-<meta property="og:updated_time" content="2019-05-15T09:01:52.824Z">
+<meta property="og:image" content="https://whisperchi.com/posts/55145/OSG_1.png">
+<meta property="og:image" content="https://whisperchi.com/posts/55145/OSG_2.png">
+<meta property="og:updated_time" content="2022-01-21T01:34:38.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacOS编译Osg&amp;amp;OsgEarth">
-<meta name="twitter:description" content="简介这个是一篇MacOS上编译Osg和OsgEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。">
-<meta name="twitter:image" content="https://whisperchi.com/posts/55145/Osg_1.png">
+<meta name="twitter:title" content="MacOS编译OSG&amp;amp;OSGEarth">
+<meta name="twitter:description" content="简介这个是一篇MacOS上编译OSG和OSGEarth的实践文章。我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(OSG)和OSGEarth库。后来换了笔记本，把MacOS的版本一起编译了，补全了常见的Android、IOS、Windows、Linux、MacOS各个操作系统编译实践。">
+<meta name="twitter:image" content="https://whisperchi.com/posts/55145/OSG_1.png">
 
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>MacOS编译Osg&amp;OsgEarth | WhisperChi</title>
+  <title>MacOS编译OSG&amp;OSGEarth | WhisperChi</title>
   
 
 
@@ -384,7 +384,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MacOS编译Osg&amp;OsgEarth
+          <h1 class="post-title" itemprop="name headline">MacOS编译OSG&amp;OSGEarth
 
               
             
@@ -428,7 +428,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Osg/" itemprop="url" rel="index"><span itemprop="name">Osg</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OSG-OSGEarth/" itemprop="url" rel="index"><span itemprop="name">OSG OSGEarth</span></a></span>
 
                 
                 
@@ -463,12 +463,12 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这个是一篇MacOS上编译Osg和OsgEarth的实践文章。<br>我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(Osg)和OsgEarth库。<br>后来换了笔记本，所以在Mac上的编译了下Osg、OsgEarth。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这个是一篇MacOS上编译OSG和OSGEarth的实践文章。<br>我之前编译过Windows7 Vs2010的32位和64位，Android armv7、Ubuntu14.04上的OpenSceneGraph(OSG)和OSGEarth库。<br>后来换了笔记本，把MacOS的版本一起编译了，补全了常见的Android、IOS、Windows、Linux、MacOS各个操作系统编译实践。</p>
 <a id="more"></a>
 <p>文章分为一下几部分</p>
 <ul>
 <li>环境介绍</li>
-<li>Osg和OsgEarth的编译过程</li>
+<li>OSG和OSGEarth的编译过程</li>
 <li>过程中遇到的一些问题和解决方法</li>
 </ul>
 <h2 id="电脑环境和代码版本"><a href="#电脑环境和代码版本" class="headerlink" title="电脑环境和代码版本"></a>电脑环境和代码版本</h2><ul>
@@ -512,20 +512,20 @@
 </thead>
 <tbody>
 <tr>
-<td>Osg</td>
+<td>OSG</td>
 <td>3.4.0</td>
 </tr>
 <tr>
-<td>OsgEarth</td>
+<td>OSGEarth</td>
 <td>2.9.0 DEVELOPMENT</td>
 </tr>
 </tbody>
 </table>
-<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h3 id="Osg编译"><a href="#Osg编译" class="headerlink" title="Osg编译"></a>Osg编译</h3><p>步骤一：</p>
-<p>CMake源码，生成生成本平台能够编译的项目<br>说明：CMake的作用是将源码生成当前操作系统的编译器能够编译的文件，如：VS平台的VS2010工程、Linux平台的Makefile文件、Mac上的Xcode项目等。<br><img src="/posts/55145/Osg_1.png" alt="配置路径"><br>选择源码与项目生成目录，在3处选择生成的项目类型（我比较熟悉Makefile，一下以Makefile为例），当然如果你熟悉CodeBlocks、Xcode、Eclipse等，也可以生成相应的项目文件。</p>
+<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><h3 id="OSG编译"><a href="#OSG编译" class="headerlink" title="OSG编译"></a>OSG编译</h3><p>步骤一：</p>
+<p>CMake源码，生成生成本平台能够编译的项目<br>说明：CMake的作用是将源码生成当前操作系统的编译器能够编译的文件，如：VS平台的VS2010工程、Linux平台的Makefile文件、Mac上的Xcode项目等。<br><img src="/posts/55145/OSG_1.png" alt="配置路径"><br>选择源码与项目生成目录，在3处选择生成的项目类型（我比较熟悉Makefile，一下以Makefile为例），当然如果你熟悉CodeBlocks、Xcode、Eclipse等，也可以生成相应的项目文件。</p>
 <hr>
 <p>步骤二：</p>
-<p><img src="/posts/55145/Osg_2.png" alt="生成"><br>选择好项目之后，点击Done，会出现图中红色部分。<br>点击Configure,CMake会根据CMakefileList.txt来查找对应源码的路径、第三方库的路径，如果没有错误，点击Generate生成对应的Makefile文件。</p>
+<p><img src="/posts/55145/OSG_2.png" alt="生成"><br>选择好项目之后，点击Done，会出现图中红色部分。<br>点击Configure,CMake会根据CMakefileList.txt来查找对应源码的路径、第三方库的路径，如果没有错误，点击Generate生成对应的Makefile文件。</p>
 <p><strong>如果出错</strong></p>
 <p>这时候会有一个Error的弹窗，我们注意看下方的提示，往上找。看哪个必须的库没有找到。<br>一般来说这个是因为你系统里面没有这个库（可能是电脑没有库、也可能是库没有加到环境变量下）<br>如果是第一种，我们使用Homebrew这个软件安装就可以。<br>如：我们缺少gdal库。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gdal</span><br></pre></td></tr></table></figure>
@@ -560,11 +560,11 @@
 <p><strong>如果编译出错</strong><br>首先我们要对编译过程有个了解，大致会遇到一下几类错误：<br>找不到头文件:    缺少对应库的开发包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install xxxx-dev</span><br></pre></td></tr></table></figure></p>
 <p>找不到实现:    没有该库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install xxx</span><br></pre></td></tr></table></figure></p>
 <p>语法错误:    这个可能是因为电脑上的库太久或者太新、接口在这些库升级之后已经变了。</p>
-<h3 id="OsgEarth编译"><a href="#OsgEarth编译" class="headerlink" title="OsgEarth编译"></a>OsgEarth编译</h3><p>与Osg编译类似，注意：编译OsgEarth前，需要我们已经编译安装完Osg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ osgversion</span><br></pre></td></tr></table></figure></p>
-<p>如果能够看到osg的版本，说明Osg编译成功<br><strong>注意</strong><br>Configure的时候，要注意Osg的相关库有没有找到</p>
+<h3 id="OSGEarth编译"><a href="#OSGEarth编译" class="headerlink" title="OSGEarth编译"></a>OSGEarth编译</h3><p>与OSG编译类似，注意：编译OSGEarth前，需要我们已经编译安装完OSG<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ osgversion</span><br></pre></td></tr></table></figure></p>
+<p>如果能够看到OSG的版本，说明OSG编译成功<br><strong>注意</strong><br>Configure的时候，要注意OSG的相关库有没有找到</p>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li>Gdal<br>这个是Gdal源码的一个错误，将某个类的析构函数声明为Protected类型。<br>我这边直接修改的Gdal的头文件，将Protected改为了Public类型<br>详见Github上的讨论。<br><a href="https://github.com/openstreetmap/osm2pgsql/issues/634" target="_blank" rel="noopener">github解决方案</a></li>
-<li>Cocoa例子编译失败<br>这个是Osg源码里面Cocoa的例子代码不对。<br>替换为最新版本的源码里面的例子即可 src/example/osgviewerCocoa 替换这个文件夹，即可。</li>
+<li>Cocoa例子编译失败<br>这个是OSG源码里面Cocoa的例子代码不对。<br>替换为最新版本的源码里面的例子即可 src/example/OSGviewerCocoa 替换这个文件夹，即可。</li>
 </ol>
 
       
@@ -809,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电脑环境和代码版本"><span class="nav-number">2.</span> <span class="nav-text">电脑环境和代码版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译步骤"><span class="nav-number">3.</span> <span class="nav-text">编译步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Osg编译"><span class="nav-number">3.1.</span> <span class="nav-text">Osg编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OsgEarth编译"><span class="nav-number">3.2.</span> <span class="nav-text">OsgEarth编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电脑环境和代码版本"><span class="nav-number">2.</span> <span class="nav-text">电脑环境和代码版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译步骤"><span class="nav-number">3.</span> <span class="nav-text">编译步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSG编译"><span class="nav-number">3.1.</span> <span class="nav-text">OSG编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSGEarth编译"><span class="nav-number">3.2.</span> <span class="nav-text">OSGEarth编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>
