@@ -364,6 +364,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/8004/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WhisperChi">
+      <meta itemprop="description" content="Nothing is impossible.">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WhisperChi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/8004/" class="post-title-link" itemprop="url">MapboxGLJS-Evented</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2022-04-21 16:09:33" itemprop="dateCreated datePublished" datetime="2022-04-21T16:09:33+08:00">2022-04-21</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="MapboxGLJS源码解读系列——evented-js"><a href="#MapboxGLJS源码解读系列——evented-js" class="headerlink" title="MapboxGLJS源码解读系列——evented.js"></a>MapboxGLJS源码解读系列——evented.js</h1><h3 id="Evented类"><a href="#Evented类" class="headerlink" title="Evented类"></a><code>Evented</code>类</h3><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>  用于事件通信</p>
+<h3 id="源码阅读"><a href="#源码阅读" class="headerlink" title="源码阅读"></a>源码阅读</h3><p>我们带着以下几个问题，来解读下 <code>Evented</code> 这个类的源码：成员变量及方法、如何在不同的类中通信</p>
+<ol>
+<li><p>成员变量及方法</p>
+<p> <img src="/posts/8004/Untitled.png" alt="Untitled"></p>
+<p> <code>_listeners</code> 是 <code>Listener</code> （相当于函数指针）的数组</p>
+<p> <code>_oneTimeListeners</code>和 <code>_listeners</code>类型相同，区别是用于存放触发一次的回调函数</p>
+<p> <code>_eventedParent</code>类型还是 <code>Evented</code>，用于设置事件冒泡触发的父类</p>
+<p> <code>_eventedParentData</code>类型是 <code>Object</code> 用于传递事件冒泡的数据</p>
+</li>
+<li><p>如何在不同的类中通信</p>
+<ul>
+<li><p>是几乎所有类的基类</p>
+<p>  通过下图，我们可以看到， <code>Evented</code> 是几乎所有类的基类，其他类都继承了其成员函数。在 <code>Evented</code> 的派生类未重载 <code>on</code>、 <code>off</code>、 <code>fire</code> 、 <code>listens</code> 和 <code>setEventParent</code>函数的时候，派生类调用这些函数，实际上是基类的实现。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="/posts/8004/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li><p>事件通信时序图</p>
+<p>  我们通过时序图来描述如下一个场景： <code>Style</code> 加载完成样式，然后发送 <code>style.load</code>信号 ，触发 <code>Map</code> 相应函数，完成地图更新。</p>
+<p>  <img src="/posts/8004/Untitled%202.png" alt="Untitled"></p>
+<p>  发送方：Style，通过 <code>fire</code>来发送事件类型</p>
+<p>  接收方：Map，通过 <code>on</code> 来添加监听函数</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://whisperchi.com/posts/30247/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1763,7 +1928,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1819,7 +1984,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
